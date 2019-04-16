@@ -23,8 +23,7 @@ try:
     # Extracting relevant text
     title=page.h1.text
     subtitle=page.h2.text
-	author=page.find("span", {"class": "autor-nombre"})
-
+    author=page.find("span", {"class": "autor-nombre"})
     document.add_heading(title)
     document.add_heading(subtitle, level=2)
     document.add_paragraph(author.text)
