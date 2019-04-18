@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup as soup
 import requests
 from requests.exceptions import HTTPError
 
-import datetime
+from datetime import datetime
 from docx import Document
 
 my_url=""
@@ -32,7 +32,7 @@ try:
     
     for par in page.findAll('p'):
         document.add_paragraph(par.text)
-    today=datetime.date.today().strftime("%Y-%m-%d")
+    today=datetime.now().strftime("%Y-%m-%d_%H-%M")
     document.add_paragraph(today)
     document.save('scraped_guardian_{}.docx'.format(today))
     

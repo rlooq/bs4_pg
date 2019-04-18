@@ -6,10 +6,10 @@ from bs4 import BeautifulSoup as soup
 import requests
 from requests.exceptions import HTTPError
 
-import datetime
+from datetime import datetime
 from docx import Document
 
-my_url=""
+my_url="https://elpais.com/tecnologia/2019/04/18/actualidad/1555599142_507375.html"
 # Adding a browser user agent
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0'
 headers = {'User-Agent': user_agent}
@@ -31,7 +31,7 @@ try:
     for par in page.findAll('p'):
         document.add_paragraph(par.text)
     
-    today=datetime.date.today().strftime("%Y-%m-%d")
+    today=datetime.now().strftime("%Y-%m-%d_%H-%M")
     document.add_paragraph(today)
     document.save('scraped_elpais_{}.docx'.format(today))
 
