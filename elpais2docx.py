@@ -9,7 +9,7 @@ from requests.exceptions import HTTPError
 from datetime import datetime
 from docx import Document
 
-my_url="https://elpais.com/tecnologia/2019/04/18/actualidad/1555599142_507375.html"
+my_url=""
 # Adding a browser user agent
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0'
 headers = {'User-Agent': user_agent}
